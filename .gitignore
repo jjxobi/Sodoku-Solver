@@ -1,0 +1,5 @@
+# ignore all logs
+*.log
+/venv
+.pyc
+/__pycache__

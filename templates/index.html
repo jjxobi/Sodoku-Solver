@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sudoku Solver</title>
+    <!-- Correct the link to the CSS file using Flask's url_for function -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Sudoku Solver</h1>
+    <form action="/solve" method="post" id="sudoku-form">
+        <div class="sudoku-board">
+            {% for row in range(9) %}
+                <div class="sudoku-row">
+                    {% for col in range(9) %}
+                        <input 
+                            type="text" 
+                            maxlength="1" 
+                            name="cell-{{ row }}-{{ col }}" 
+                            pattern="[1-9]*"
+                            class="sudoku-cell{{ ' right-border' if col % 3 == 2 and col != 8 else '' }}{{ ' bottom-border' if row % 3 == 2 and row != 8 else '' }}">
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+        <button type="submit">Solve</button>
+    </form>
+</body>
+</html>
+
