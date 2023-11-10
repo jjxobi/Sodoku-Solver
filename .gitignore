@@ -1,5 +1,7 @@
 # ignore all logs
 *.log
+#virtual enviro files
 /venv
+#pycahce
 .pyc
 /__pycache__
