@@ -1,7 +1,7 @@
-#Sodoku Puzzle Solver 
-#Created by Jesse O'Brien
+# Sudoku Puzzle Solver
+# Created by Jesse O'Brien
 
-#Funtion to print out the board
+# Function to print out the board
 def print_board(board):
     for i in range(len(board)):
         if i % 3 == 0 and i != 0:
@@ -16,7 +16,8 @@ def print_board(board):
             else:
                 print(str(board[i][j]) + " ", end="")
 
-#Function that finds empty cells in the board
+
+# Function that finds empty cells in the board
 def find_empty(board):
     for i in range(len(board)):
         for j in range(len(board[0])):
@@ -25,7 +26,8 @@ def find_empty(board):
 
     return None
 
-#Function that checks numbers that can be entered in position
+
+# Function that checks numbers that can be entered in position
 def is_valid(board, number, position):
     # Check row
     for i in range(len(board[0])):
@@ -48,7 +50,8 @@ def is_valid(board, number, position):
 
     return True
 
-#Funtion that applies the logarithm to solve the sodoku puzzle
+
+# Function that applies the algorithm to solve the Sudoku puzzle
 def solve_sudoku(board):
     find = find_empty(board)
     if not find:
@@ -67,3 +70,21 @@ def solve_sudoku(board):
 
     return False
 
+
+# New function to find all solutions to the Sudoku puzzle
+def find_all_solutions(board, solutions):
+    find = find_empty(board)
+    if not find:
+        # Append a copy of the current solution to the solutions list
+        solutions.append([row[:] for row in board])
+        return
+    else:
+        row, col = find
+
+    for i in range(1, 10):
+        if is_valid(board, i, (row, col)):
+            board[row][col] = i
+
+            find_all_solutions(board, solutions)
+
+            board[row][col] = 0  # Reset the cell and try the next number
