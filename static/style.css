@@ -65,3 +65,10 @@ button {
     margin: 20px auto; /* Top and Bottom 20px, Left and Right auto */
     display: block; /* Block level elements can receive margin auto for horizontal centering */
 }
+
+#timer {
+    position: absolute;
+    right: 20px; /* Or however far from the right side you want */
+    top: 20px; /* Adjust as needed */
+    font-size: 20px;
+}

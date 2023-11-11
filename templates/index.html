@@ -19,14 +19,16 @@
                         <input 
                             type="text" 
                             maxlength="1" 
-                            name="cell-{{ row }}-{{ col }}" 
+                            name="cell-{{ row }}-{{ col }}"
+                            id="cell-{{ row }}-{{ col }}" 
                             pattern="[1-9]*"
                             class="sudoku-cell{{ ' right-border' if col % 3 == 2 and col != 8 else '' }}{{ ' bottom-border' if row % 3 == 2 and row != 8 else '' }}">
                     {% endfor %}
                 </div>
             {% endfor %}
         </div>
-        <button type="submit">Solve</button>
+        <div id="timer">Time to solve: <span id="time">0</span> seconds</div>
+        <button type="submit">Solve</button> <button type="button" id="reset-button">Reset</button>
     </form>
 </body>
 </html>
