@@ -36,6 +36,13 @@ h1 {
     outline: none; /* Removes the default focus outline */
 }
 
+/* Bold the numbers input by the user and add a light grey background */
+.user-input {
+    font-weight: bold;
+    background-color: #f1f1f1; /* Light grey background */
+}
+
+
 /* Thicker borders for the right of the 3rd and 6th cell in each row */
 .sudoku-cell:nth-of-type(3n) {
     border-right: 3px solid #000;
@@ -71,4 +78,40 @@ button {
     right: 20px; /* Or however far from the right side you want */
     top: 20px; /* Adjust as needed */
     font-size: 20px;
+}
+
+#loading {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+
+#pause-resume-button {
+    display: block;
+    margin: 10px auto;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#footer {
+    position: absolute;
+    bottom: 10px; /* Adjust this value to move the text further up or down */
+    left: 10px; /* Adjust this value to move the text further left or right */
+    font-size: 14px;
+    color: #333; /* Adjust the color to match your design */
+}
+
+#footer a {
+    color: #a78bfa; /* Adjust the color of the hyperlinks */
+    text-decoration: none;
+}
+
+#footer a:hover {
+    text-decoration: underline; /* Add an underline on hover */
 }

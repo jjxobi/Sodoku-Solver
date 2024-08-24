@@ -28,12 +28,17 @@
             {% endfor %}
         </div>
         <div id="timer">Time to solve: <span id="time">0</span> seconds</div>
+        <div id="loading">Loading...</div>
         <p id="num-solutions" style="display: none;">Number of solutions: <span id="solution-count">0</span></p>
-<button id="prev-solution" style="display:none;">Previous Solution</button>
-<button id="next-solution" style="display:none;">Next Solution</button>
-        </div>
-        <button type="submit">Solve</button> <button type="button" id="reset-button">Reset</button>
+        <button id="prev-solution" style="display:none;">Previous Solution</button>
+        <button id="next-solution" style="display:none;">Next Solution</button>
+        <button id="pause-resume-button" style="display:none;">Pause</button>
+        <button type="submit">Solve</button> 
+        <button type="button" id="reset-button">Reset</button>
     </form>
 </body>
 </html>
 
+<div id="footer">
+    <p>Made by <a href="https://jessejobrien.com/" id="author-link">Jesse O'Brien</a>. View the code <a href="#" id="code-link">here</a>.</p>
+</div>

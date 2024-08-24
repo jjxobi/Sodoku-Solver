@@ -59,14 +59,14 @@ def solve_sudoku(board):
     else:
         row, col = find
 
-    for i in range(1, 10):
-        if is_valid(board, i, (row, col)):
-            board[row][col] = i
+    candidates = [i for i in range(1, 10) if is_valid(board, i, (row, col))]
+    for num in sorted(candidates):  # Sorting might help to try smaller numbers first
+        board[row][col] = num
 
-            if solve_sudoku(board):
-                return True
+        if solve_sudoku(board):
+            return True
 
-            board[row][col] = 0
+        board[row][col] = 0
 
     return False
 
